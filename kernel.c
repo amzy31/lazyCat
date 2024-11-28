@@ -21,8 +21,9 @@ void kernel_up(){
     sleep(0x2FAFFFE); // sleep for logo to load ;;
   }
   //color set to green and black
-  init_vga(WHITE, BLUE);
+  init_vga(WHITE, BLACK);
   newline_on_terminal();
+
   // input() for   infinity loop (terminal loop infinity)
   print_on_terminal("# ");
 

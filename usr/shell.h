@@ -10,7 +10,7 @@ void input(){
     keycode = get_input_prompt();
     // if user press enter (KEY)
     if(keycode == KEY_ENTER){
-      vga_index = 82;
+      vga_index += 164;
       newline_on_terminal();
       print_on_terminal("# ");
 
@@ -24,12 +24,9 @@ void input(){
     else if(keycode == KEY_BACKSPACE && vga_index>82){
         if (vga_index >= 2){
 
-          vga_index = vga_index-1;
+          vga_index -= 1;
           print_on_terminal(" ");
-          vga_index = vga_index-1;
-          
-          
-
+          vga_index -= 1;
           
         }
 
@@ -38,7 +35,6 @@ void input(){
           get_input_prompt();
 
         }        
-        
     }
 
     //if user press arrow up (KEY
@@ -80,25 +76,13 @@ void input(){
     }
     //if user press ESC (KEY)
     else if(keycode == KEY_ESC){
-        newline_on_terminal();
-        newline_on_terminal();
         print_on_terminal("EXIT ! : ");
-        newline_on_terminal();
-        newline_on_terminal();
-        print_on_terminal("HALT MODE : Halt the PC and disable keyboard?!");
-        newline_on_terminal();
-        newline_on_terminal();
-        print_on_terminal("PLEASE CONFIRM WITH <ESC> AGAIN (HALT MODE)?"); 
-        newline_on_terminal();
-        newline_on_terminal();
-        break;break;
+        break;
     }
 
     else{
       ch = get_ascii_char(keycode);
       print_char(ch);
-
-
     }
     /*
      * NO SCROLL TERMINAL (static prompt )
@@ -111,11 +95,9 @@ void input(){
       next_line_index = next_line_index - enter_cuonter;
     }
 
-
     for (int i = 0; i < 1; i++){
       sleep(0x4CFFFFF8);/* keyboard type speed for (((real machine))) */
     }
 
   }while(ch > 0);
-
 }
