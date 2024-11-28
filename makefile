@@ -23,7 +23,6 @@ mkiso:
 	
 	mkdir -p iso/boot/grub
 	
-	mkdir -p iso/about/
 	
 	cp charleX.bin iso/boot/charleX.bin
 	
