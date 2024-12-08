@@ -9,12 +9,9 @@
 // kernel entery point !!
 void kernel_up(){
 
-
   // color of terminal(you can change it if you want :D )
   init_vga(WHITE, BLUE);
   logo();
-
-
 
 
   for (int i = 0; i < 40; i++){
@@ -28,12 +25,9 @@ void kernel_up(){
   print_on_terminal("# ");
 
   while (1){
-    
     char keycode = 0;
     keycode = get_input_prompt();
-
     input();
-
     if (keycode == KEY_ENTER){next_line_index =next_line_index-2;}
         
   }
